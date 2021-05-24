@@ -1,7 +1,6 @@
 This post has writeup for two challenges: `WTF PHP (Web)` and `ezpz (Android app reversing)` 
 
 ## 1. WTF php
-
 This challenge has the local file inclusion (LFI) vulnerability. The solution is as follows:
 1. Use opendir() and readdir() to list the contents of /etc directory.
 2. Get the name of the txt file containing the flag (f1@g.txt).
@@ -21,13 +20,10 @@ This challenge has the local file inclusion (LFI) vulnerability. The solution is
 ```
 
 ## 2. ezpz
-
 In this challenge, the app exposes the flag, i.e, sensitive information in the logs. Here's how I got the flag:
-
 1. I used jadx-gui to read the source code of the ezpz.apk file.
 2. In the source code of main activity, you can see that the method isThisWhatUWant() is called (line 33).
-
-
+![2_1_ezpz](https://user-images.githubusercontent.com/78410304/119315865-e994f580-bc93-11eb-8a0b-145ce5209839.png)
 3. Now when you go to the code of this function, it takes a snapshot of a firebase collection and prints the flag in the logs of the app.
 4. So to get the flag, all you have to do is setup an emulator (like Genymotion), install the app on the emulator, run it and get the logs using the command 'adb logcat'.
 
