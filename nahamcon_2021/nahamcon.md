@@ -14,7 +14,7 @@ flag: flag{26080a2216e95746ec3e932002b9baa4}
 This challenge is a steganography challenge. It contains an image hidden inside the given image. The solution is as follows:  
 1. Download the given image.
 2. Use the binwalk tool to list the hidden files.
-<img src="{{ site.baseurl }}/assets/images/3_1_pollex.png" alt="binwalk_op" />
+![3_1_pollex](https://user-images.githubusercontent.com/78410304/119316053-1e08b180-bc94-11eb-84e8-66cf2ae58711.png)
 3. Now we can use the dd command in linux to extract the image. View it to get the flag.
 ```bash
     $ dd if=pollex.jpg of=pollex3.jpg skip=334 bs=1
@@ -25,7 +25,7 @@ flag: flag{65c34alec121a286600ddd48fe36bc88}
 This challenge is about the wingding fonts. Here's how I solved it:
 1. I copy pasted the file contents in google search. There I got the hint that the symbols are some kind of a font.
 2. Use any online translator to translate the font. I used https://lingojam.com/WingDing
-<img src="{{ site.baseurl }}/assets/images/3_2_chickenwings.png" alt="chicken_wings" />
+![3_2_chickenwings](https://user-images.githubusercontent.com/78410304/119316080-26f98300-bc94-11eb-9e35-e56ef4919092.png)
 flag: flag{e0791ce68f718188c0378b1c0a3bdc9e}
 
 ## 4. CAR KEYS (Warmups)
@@ -36,7 +36,7 @@ This challenge is about monoalphabetic substitution cipher. The solution is as f
     a. Write down the entire alphabet in 1st row.  
     b. In the second row, start by writing the given ciphertext alphabet (QWERTY in this case).  
     c. Fill up the rest of the spots in alphabetical order, without repeating the letters.  
-<img src="{{ site.baseurl }}/assets/images/3_3_carkeys.png" alt="car_keys" />
+![3_3_carkeys](https://user-images.githubusercontent.com/78410304/119316111-2f51be00-bc94-11eb-997c-e5a8f5c2906d.png)
 flag: flag{6f980c0101c8aa361977cac06508a3de}  
 
 ## 5. BUZZ (Warmups)
@@ -54,6 +54,6 @@ flag: flag{b3a33db7ba04c4c9052ea06d9ff17869}
 This challenge demonstrates the problem of hardcoded credentials. The solution is as follows:
 1. Use jadx-gui to reverse the apk file. 
 2. In the main activity, you can see that the password is hardcoded in the if condition.
-<img src="{{ site.baseurl }}/assets/images/3_4_resourceful_apk.png" alt="resourceful_apk" />
+![3_4_resourceful_apk](https://user-images.githubusercontent.com/78410304/119316154-3c6ead00-bc94-11eb-968e-f3d56825cc80.png)
 3. Enter the password in login screen of the app and get the flag.  
 flag: flag{7eecc051f5cb3a40cd6bda40de6eeb32}
