@@ -5,7 +5,8 @@ This post has writeups for the imaginary ctf 2021.
 ```python 
 sed <User input from webpage> stuff.txt
 ```
-2. From the above command, we can assume that the flag is in a file called flag.txt. 3. If you try executing the sed command, it performs the desired operations on the file and prints the file contents on the console.
+2. From the above command, we can assume that the flag is in a file called flag.txt. 
+3. If you try executing the sed command, it performs the desired operations on the file and prints the file contents on the console.
 4. The payload I used : "s/i/I/ \*". So the command executed will be:
 ```python
 sed s/i/I/ * stuff.txt
@@ -13,7 +14,7 @@ sed s/i/I/ * stuff.txt
 5. This command would replace i with I in all the files and print the contents of all the files on the console.
 6. Flag: ictf{:roocu:roocu:roocu:roocu:roocu:roocursion:rsion:rsion:rsion:rsion:rsion:\_473fc2d1}
 
-##2. PWN - stackoverflow
+## 2. PWN - stackoverflow
 1. This is a classic buffer overflow challenge. We have a character array of size 40 and a gets() function to accept input from a user. The gets() function does not check the input size and goes on reading until it encounters new line("\n"). 
 2. As shown in the above decompiled code (I've used Ghidra for this), there is long variable whose contents are compared to an ascii string and if correct, we get a shell prompt that can help us read the flag. 
 3. Now looking at the way stack stores variables, the buffer will occupy 40 bytes and the target_var variable will be stored immediately after the buffer. So if we enter more than 40 characters in the buffer, we can easily override the target_var with any value we want. 
@@ -21,7 +22,7 @@ sed s/i/I/ * stuff.txt
 5. We can easily run "cat flag.txt" when we get the shell prompt.
 6. Flag: ictf{4nd_th4t_1s_why_y0u_ch3ck_1nput_l3ngth5_486b39aa}
 
-##3. MISC - stonks
+## 3. MISC - stonks
 1. Given script
 ```python
 #!/usr/bin/env python3
