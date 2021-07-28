@@ -16,6 +16,8 @@ sed s/i/I/ * stuff.txt
 
 ## 2. PWN - stackoverflow
 1. This is a classic buffer overflow challenge. We have a character array of size 40 and a gets() function to accept input from a user. The gets() function does not check the input size and goes on reading until it encounters new line("\n"). 
+![buffer](https://user-images.githubusercontent.com/78410304/127282490-ac705903-1847-496a-957e-4a729020e1fc.jpg)
+
 2. As shown in the above decompiled code (I've used Ghidra for this), there is long variable whose contents are compared to an ascii string and if correct, we get a shell prompt that can help us read the flag. 
 3. Now looking at the way stack stores variables, the buffer will occupy 40 bytes and the target_var variable will be stored immediately after the buffer. So if we enter more than 40 characters in the buffer, we can easily override the target_var with any value we want. 
 4. My payload: "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAftci". If you look at the if statement in the code, the comparison is performed with "ictf" but we have entered "ftci". This is because the x86 architecture follows the little endian format for storing data. Little endian basically means the data on the right hand hide is stored in the smaller location. So the input "ftci" will be stored as "ictf" and the if statement will evaluate to true.
