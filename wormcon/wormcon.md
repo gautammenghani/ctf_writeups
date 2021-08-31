@@ -10,6 +10,7 @@ Author : x3rz
 
 ### 2. Solution
 1. When you goto the challenge site, you are greeted with a page having a single textbox. Any string you enter will be base64 decoded and printed back on the page.
+ 
  ![image](https://user-images.githubusercontent.com/78410304/131538470-abd32561-48d7-448d-ac4b-b43b773444ab.png)
 
 2. Since the string is passed to the backend through GET requests, I initially thought that this must be a directory traversal attack. But it wasn't the case.
