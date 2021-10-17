@@ -40,6 +40,18 @@ def get_intersect(x1, x2, w1, w2, y1, y2, h1):
 ```
 4. Flag : flag{CaNT\_ch34t\_d34th}
 
+# Reversing challenges
+## Cereal
+1. In this challenge we are given an ELF file that asks for a passphrase and checks if it is the same as the flag or not. 
+2. In the following screenshot, we can see that the do while loop does some computation and stores it in a buffer.
+![image](https://user-images.githubusercontent.com/78410304/137625893-bba1b2ce-8e09-4d47-ac85-3c91bb445af0.png)
+3. The solution is to load this file into GDB, set a breakpoint anywhere after the flag is stored in the buffer, and read the flag.
+```gdb
+(gdb) x/32s $rsp
+0x7fffffffdc20: "flag{c0unt-ch0cula-cereal-FTW}"
+```
+4. Flag : flag{c0unt-ch0cula-cereal-FTW}
+
 # SQL challenges
 ## Demonne
 1. In this challenge, we are given a dump of a SQL database. We are asked to find the number of records in the customers table. 
