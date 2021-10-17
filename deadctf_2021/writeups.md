@@ -3,9 +3,9 @@
 1. In this challenge we are given a pcap file and are asked to locate a search query where the attacker searched for the victim's name.
 2. Since packet captures are long, it is generally a good idea to use the wireshark filters to narrow down your search space. In this example, we know that the search engines make a HTTP GET request. So we have to just look at the responses received for the HTTP GET requests.
 3. When going through the pcap file, the victim's name is present in packet number 7019, as shown in the screenshot below.
-4. ![image](https://user-images.githubusercontent.com/78410304/137625134-ba341e2a-227c-4b15-83c2-5989c4a7343f.png)
+ ![image](https://user-images.githubusercontent.com/78410304/137625134-ba341e2a-227c-4b15-83c2-5989c4a7343f.png)
 
-5. Flag : flag{charles geschickter}
+4. Flag : flag{charles geschickter}
 
 # Programming challenges
 ## The count
