@@ -39,3 +39,29 @@ def get_intersect(x1, x2, w1, w2, y1, y2, h1):
             pass
 ```
 4. Flag : flag{CaNT\_ch34t\_d34th}
+
+# SQL challenges
+## Demonne
+1. In this challenge, we are given a dump of a SQL database. We are asked to find the number of records in the customers table. 
+2. The solution is to load the file in Mysql database and count the rows in it.
+```mysql
+mysql> create database demonne;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> use demonne;
+Database changed
+mysql> source demonne.sql;
+mysql> select count(*) from customers;
++----------+
+| count(*) |
++----------+
+|    10000 |
++----------+
+1 row in set (0.01 sec)
+```
+3. Flag : flag{10000}
+
+## Demonne 2 
+1. In this challenge, we have to use the same sql dump file from above and find the foreign key used in the loans table.
+2. Open the demonne.sql file and goto the query where loans table is created and look for foreign keys.
+3. Flag : flag{fk_loans_cust_id}
